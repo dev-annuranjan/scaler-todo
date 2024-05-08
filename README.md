@@ -19,4 +19,5 @@
 - Add a todo item to the list with "Enter" button
 - Mark todo items complete/incomplete
 - Delete the todo items
-- Get a random joke 
+- Get a random joke
+- Todos are stored in the local storage.
