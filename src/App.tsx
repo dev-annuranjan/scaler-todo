@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import './App.css'
 import { type Todo as TodoType } from "@/types/todo"
 import Todo from "@/components/todo"
-import { Joke, TwoPart } from './types/joke'
+import { Joke } from './types/joke'
 import getJokes from '@/services/JokesService';
 
 function getTodosFromLocalStorage() {
@@ -68,10 +68,12 @@ function App() {
   }
 
   const handleTaskDelete: (id: number) => void = (id) => {
-    const idx = todos.findIndex(x => x.id === id);
+    const newTodo = [];
 
-    const newTodos = [...todos.splice(idx, 1)];
-    setTodos(newTodos);
+    for (const todo of todos) {
+      if (todo.id !== id) newTodo.push(todo)
+    }
+    setTodos(newTodo);
   }
 
   return (

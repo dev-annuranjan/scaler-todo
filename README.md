@@ -1,6 +1,7 @@
-# A TODO Project:
+# A TODO Project
 
-## Technologies: 
+## Technologies
+
 - React
 - Vite
 - TypeScript
@@ -8,12 +9,14 @@
 - Shadcn
 - Axios
 
-## What App Does:
+## What App Does
+
 - Create a list of Todos
 - Manage todo items
 - Get a joke on page load and refresh
 
-## App Features:
+## App Features
+
 - Input autofocus when page loads/refreshes
 - Button disabled when input is blank
 - Add a todo item to the list with "Enter" button
