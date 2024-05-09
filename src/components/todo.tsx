@@ -8,6 +8,7 @@ type TodoProps = {
     handleToggle: (id: number) => void;
     handleDelete: (id: number) => void;
 }
+
 const Todo: React.FC<TodoProps> = ({ todo, handleToggle, handleDelete }) => {
     const toggleIsComplete: () => void = () => {
         handleToggle(todo.id);
@@ -21,9 +22,11 @@ const Todo: React.FC<TodoProps> = ({ todo, handleToggle, handleDelete }) => {
         <li
             key={todo.id}
             className='flex justify-between mx-auto my-2 px-4 py-2 bg-slate-100'>
-            <div className='inline-block'>
+            <div className="flex items-center space-x-2">
                 <Checkbox id={`${todo.id}`} checked={todo.isCompleted} onCheckedChange={toggleIsComplete} className='todo-checkbox' />
-                <span className={`ml-2 align-text-bottom ${todo.isCompleted ? "line-through" : ""}`}>{todo.task}</span>
+                <label htmlFor={`${todo.id}`} className="text-sm font-normal leading-none peer-disabled:opacity-70" >
+                    {todo.task}
+                </label>
             </div>
             <span onClick={deleteTask}><img src={Xmark} className='w-6 h-6 align-text-middle' /></span>
         </li>);
